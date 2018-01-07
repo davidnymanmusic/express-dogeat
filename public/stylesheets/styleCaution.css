@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Itim');
-@import url(http://allfont.net/allfont.css?fonts=futura-bold);
+
 
 .oval-speech-no {
   padding-top: 50px;
@@ -10,17 +9,15 @@
   margin: 1em auto 50px;
   text-align: center;
   color: rgb(255, 255, 255);
-  background: rgb(242, 10, 66);
+  background: rgb(249, 235, 109);
   border-radius: 156px / 114px;
-  font-size: 1.25em;
   font-family: 'Futura-Bold', arial;
-  font-size: 48px;
+  font-size: 28px;
 }
 
 .oval-speech-no p {
-  font-size: 1.25em;
   font-family: 'Futura-Bold', arial;
-  font-size: 24px;
+  font-size: 12px;
 }
 
 /* creates part of the curve */
@@ -33,16 +30,16 @@
   bottom: -30px;
   right: 50%;
   height: 30px;
-  border-right: 60px solid rgb(242, 10, 66);
-  background: rgb(242, 10, 66);
+  border-right: 60px solid rgb(249, 235, 109);
+  background: rgb(249, 235, 109);
   /* need this for webkit - bug in handling of border-radius */
   /* css3 */
   border-bottom-right-radius: 80px 50px;
   /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
   transform: translate(0, -2px);
-  font-size: 1.25em;
+
   font-family: 'Futura-Bold', arial;
-  font-size: 20px;
+
 }
 
 /* creates part of the curved pointy bit */
