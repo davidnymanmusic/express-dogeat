@@ -48,7 +48,10 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {
+    title: 'ERROR!',
+    name: 'David Nyman',
+    email: 'davenyman@gmail.com'});
 });
 
 console.log("http://localhost:8888/");

@@ -73,31 +73,12 @@ p {
 }
 
 .input {
-  display: inline-grid;
-  width: 50%;
-  padding: 5px;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #F00;
-  text-align: center;
-  font-family: 'Futura-Bold', arial;
-  display: run-in;
-  margin-left: 20px;
+display: none;
 }
 
 input {
-  font-family: 'Futura-Bold', arial;
-  text-transform: uppercase;
-  height: 60px;
-  font-size: 60px;
-  border: 0px;
-  width: 700px;
-  color: rgb(65, 65, 65);
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 1px solid black;
-  text-align: center;
+
+  display: none;
 }
 
 input[type="text"] {
@@ -128,7 +109,7 @@ input[type="text"] {
   margin: 1em auto 50px;
   text-align: center;
   color: rgb(255, 255, 255);
-  background: rgb(69, 198, 64);
+  background: rgb(161, 161, 161);
   border-radius: 156px / 114px;
   font-size: 1.25em;
   font-family: 'Futura-Bold', arial;
@@ -151,8 +132,8 @@ input[type="text"] {
   bottom: -30px;
   right: 50%;
   height: 30px;
-  border-right: 60px solid rgb(69, 198, 64);
-  background: rgb(69, 198, 64);
+  border-right: 60px solid rgb(161, 161, 161);
+  background: rgb(161, 161, 161);
   /* need this for webkit - bug in handling of border-radius */
   /* css3 */
   border-bottom-right-radius: 80px 50px;
