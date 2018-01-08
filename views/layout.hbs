@@ -2,42 +2,49 @@
 <html>
 
 <head>
-  <title>{{title}}</title>
+  <title>{{homeTitle}}</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
-  <body id="body">
-    <div class="topnav">
-  <a href="/">Home</a>
-  <a href="/yes">Yes</a>
-  <a href="/no">No</a>
-  <a href="/caution">Caution</a>
-</div>
+<body id="body">
+  <div class="topnav">
+    <a href="/">Home</a>
+    <a href="/yes">Yes</a>
+    <a href="/no">No</a>
+    <a href="/caution">Caution</a>
+  </div>
 
-</div>
-    <div class="container">
+  </div>
+  <div class="container">
 
-      <div class="whole">
-        <div class="topbar"></div>
-        <div class="input">
-          <p>can my dog eat</p>
-          <span id="food"> <input type="text" name="food" value=""> <p id="question">?</p></span>
-        </div>
-        <div class="separator"></div>
-        <span id="wrapper">
+    <div class="whole">
+      <div class="topbar"></div>
+      <div class="input">
+        <p>can my dog eat</p>
+        <span id="food"> <input type="text" name="food" value=""> <p id="question">?</p></span>
+      </div>
+      <div class="separator"></div>
+      <span id="wrapper">
           <img src="https://i.imgur.com/vyjHXAT.png" title="source: imgur.com" height="260px" width="260px" />
         </span>
-        <span class="bubble">
+      <span class="bubble">
           <span class="oval-speech-no">
             {{title}}
           </span>
-        </span>
+      </span>
 
-      </div>
     </div>
+  </div>
 
-    {{{body}}}
+  {{{body}}}
 
-  </body>
+  <p class="info">{{info}}</p>
+  <p class="info"></p>
+  <p class="info"><span class="yes">okay to eat</span></p> 
+  <p class="info"><span class="no">do not eat</span></p> 
+  <p class="info"><span class="caution">be careful</span></p> 
+  <div class="separator"></div>
+
+</body>
 
 </html>

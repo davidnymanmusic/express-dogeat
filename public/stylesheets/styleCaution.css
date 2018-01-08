@@ -5,14 +5,14 @@
   position: relative;
   width: 80vw;
   height: 100vh;
-  padding: 87px 114px;
+  padding: 82px 70px;
   margin: 1em auto 50px;
   text-align: center;
   color: rgb(255, 255, 255);
   background: rgb(249, 235, 109);
   border-radius: 156px / 114px;
   font-family: 'Futura-Bold', arial;
-  font-size: 28px;
+  font-size: 40px;
 }
 
 .oval-speech-no p {

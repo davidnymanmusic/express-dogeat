@@ -5,7 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('no', {
     title: 'NO!',
-    name: 'David Nyman'});
+    name: 'David Nyman',
+    homeTitle: 'DOG EAT ___?'});
 });
 
 module.exports = router;
