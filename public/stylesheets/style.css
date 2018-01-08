@@ -15,12 +15,12 @@ body {
 }
 
 .topbar {
-  height: 50px;
+  height: 30px;
 }
 
 .whole {
   margin: 0 auto;
-  margin-bottom: 370px;
+  margin-bottom: 220px;
 }
 
 .container {
@@ -33,7 +33,7 @@ body {
   background-color: rgba(231, 231, 231, .2);
   font-family: 'Futura', arial;
   font-weight: 100;
-  padding-left: 30%;
+  padding-left: 38%;
 }
 
 .topnav a {
@@ -76,6 +76,10 @@ p {
   font-size: 20px;
 }
 
+img::selection {
+  background-color: rgba(255, 255, 255, 0);
+}
+
 .input {
   display: inline-grid;
   width: 50%;
@@ -105,7 +109,11 @@ input {
 }
 
 input[type="text"] {
-  width: 580px;
+  width: 550px;
+  font-size: 52px;
+}
+input[type="text"]::selection {
+background-color: rgba(145, 145, 145, 0.4);
 }
 
 #question {
@@ -116,7 +124,7 @@ input[type="text"] {
 
 #food {
   display: flex;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .separator {
@@ -143,6 +151,11 @@ input[type="text"] {
   font-size: 1.25em;
   font-family: 'Futura-Bold', arial;
   font-size: 24px;
+  cursor: pointer;
+}
+
+.oval-speech-no::selection {
+  background-color: rgba(157, 157, 157, 0);
 }
 
 /* creates part of the curve */
@@ -199,7 +212,32 @@ input[type="text"] {
   color: rgb(242, 10, 66);
   text-transform: uppercase;
 }
+
 .caution {
   color: rgb(249, 235, 109);
+  text-transform: uppercase;
+}
+
+p::selection {
+  color: rgb(251, 245, 245);
+   background-color: rgb(69, 198, 64);
+  text-transform: uppercase;
+}
+
+.yes::selection {
+  color: rgb(251, 245, 245);
+   background-color: rgb(69, 198, 64);
+  text-transform: uppercase;
+}
+
+.no::selection {
+  color: rgb(251, 245, 245);
+  background-color: rgb(242, 10, 66);
+  text-transform: uppercase;
+}
+
+.caution::selection {
+  color: rgb(255, 255, 255);
+  background-color: rgb(249, 235, 109);
   text-transform: uppercase;
 }
