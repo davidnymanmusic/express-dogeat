@@ -4,6 +4,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const knex = require('./routes/db.js');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
@@ -15,6 +16,7 @@ const contact = require('./routes/contact');
 const app = express();
 
 // view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

@@ -21,7 +21,9 @@
       <div class="topbar"></div>
       <div class="input">
         <p>can my dog eat</p>
-        <span id="food"> <input type="text" name="food" value=""> <p id="question">?</p></span>
+        <form onSubmit="return process();">
+          <span id="food"> <input type="text" name="url" id="url"> <p id="question">?</p></span>
+        </form>
       </div>
       <div class="separator"></div>
       <span id="wrapper">
@@ -39,12 +41,19 @@
   {{{body}}}
 
   <p class="info">{{info}}</p>
-  <p class="info"></p>
-  <p class="info"><span class="yes">okay to eat</span></p> 
+  {{!-- <p class="info"></p>
+  <p class="info"><span class="yes">okay to eat</span></p>
   <p class="info"><span class="no">do not eat</span></p>
-  <p class="info"><span class="caution">be careful</span></p>
+  <p class="info"><span class="caution">be careful</span></p> --}}
   <div class="separator"></div>
 
 </body>
+<script>
+  function process() {
+    var url = "http://localhost:8888/" + document.getElementById("url").value.toLowerCase();
+    location.href = url;
+    return false;
+  }
+</script>
 
 </html>

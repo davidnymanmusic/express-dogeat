@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    {{title}}
+  </title>
+</head>
+
+<body>
+
+  <p class="yes">
+    {{ name }}
+  </p>
+  <p class="description">
+    {{ description }}
+  </p>
+  <p>
+    {{ param }}
+  </p>
+</body>
+
+</html>
+
+<script>
+  function process() {
+    var url = "http://localhost:8888/" + document.getElementById("url").value;
+    location.href = url;
+    return false;
+  }
+</script>

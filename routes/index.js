@@ -1,13 +1,70 @@
 const express = require('express');
 const router = express.Router();
+const knex = require('./db.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {
+  res.render('yes', {
     title: 'EAT?',
     name: 'David Nyman',
     homeTitle: 'DOG EAT ___?',
     info: 'What you need to know:'
+  });
+});
+
+// router.get('/:food', (req, res) => {
+//   const food_name = req.params.food;
+//   knex('food_table').then((rows) => {
+//     function search(nameKey, rowsArray){
+//     for (var i=0; i < rowsArray.length; i++) {
+//         if (rowsArray[i].name === nameKey) {
+//             return rowsArray[i];
+//         }
+//     }
+// }
+//     res.format({
+//       'application/json': () => res.json(rows),
+//       'text/html': () => res.render('home', {
+//         param: food_name,
+//         name: search(food_name, rows).name,
+//         species: search(food_name, rows).description,
+//         title: 'my family' }),
+//       'default': () => res.sendStatus(406)
+//     });
+//   });
+// });
+
+router.get('/food', (req, res) => {
+  knex('food_table').then((rows) => {
+    res.format({
+      'application/json': () => res.json(rows),
+      // 'text/html': () => res.render('birds/index', { birds: rows }),
+      'default': () => res.sendStatus(406)
+    });
+  });
+});
+
+router.get('/:food_name', (req, res) => {
+  const food_name = req.params.food_name;
+  knex('food_table').then((rows) => {
+    function search(nameKey, rowsArray){
+    for (var i=0; i < rowsArray.length; i++) {
+        if (rowsArray[i].food_name === nameKey) {
+            return rowsArray[i];
+        }
+    }
+}
+    res.format({
+      'application/json': () => res.json(rows),
+      'text/html': () => res.render('home', {
+        title: (food_name + "!").toUpperCase(),
+        name: search(food_name, rows).food_name,
+        description: search(food_name, rows).description,
+        }),
+      'default': () => res.sendStatus(406)
+
+    });
+          console.log(food_name)
   });
 });
 

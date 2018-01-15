@@ -224,6 +224,13 @@ p::selection {
   text-transform: uppercase;
 }
 
+.description {
+  text-align: left;
+  font-size: 1.3em;
+  margin: 0 auto;
+  width: 60%;
+}
+
 .yes::selection {
   color: rgb(251, 245, 245);
    background-color: rgb(69, 198, 64);
