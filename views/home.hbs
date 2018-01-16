@@ -10,10 +10,10 @@
 
 <body>
 
-  <p class="yes">
+  <p id="foodName">
     {{ name }}
   </p>
-  <p class="description">
+  <p id="foodDescription" class="description">
     {{ description }}
   </p>
   <p>
@@ -24,9 +24,5 @@
 </html>
 
 <script>
-  function process() {
-    var url = "http://localhost:8888/" + document.getElementById("url").value;
-    location.href = url;
-    return false;
-  }
+
 </script>

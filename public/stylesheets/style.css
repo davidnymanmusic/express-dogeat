@@ -248,3 +248,7 @@ p::selection {
   background-color: rgb(249, 235, 109);
   text-transform: uppercase;
 }
+
+#foodName {
+  text-transform: uppercase;
+}
