@@ -8,10 +8,10 @@
 
 <body id="body">
   <div class="topnav">
-    {{!-- <a href="/">Home</a>
+    <a href="/">Home</a>
     <a href="/yes">Yes</a>
     <a href="/no">No</a>
-    <a href="/caution">Caution</a> --}}
+    <a href="/caution">Caution</a>
   </div>
 
   </div>
@@ -20,20 +20,23 @@
     <div class="whole">
       <div class="topbar"></div>
       <div class="input">
-        <p>can my dog eat</p>
+        <p id="my">can my dog eat</p>
         <form onSubmit="return process();">
           <span id="food"> <input type="text" name="url" id="url"> <p id="question">?</p></span>
         </form>
       </div>
       <div class="separator"></div>
-      <span id="wrapper">
-          <img src="https://i.imgur.com/vyjHXAT.png" title="source: imgur.com" height="260px" width="260px" />
+      <div class="dog">
+        <span id="wrapper">
+          <img src="https://i.imgur.com/vyjHXAT.png" title="Ask Arthur, he knows!" height="220px" width="220px" />
         </span>
-      <span class="bubble">
+        <span class="bubble">
           <span id="bubbleText" class="oval-speech-no">
             {{title}}
           </span>
-      </span>
+        </span>
+
+      </div>
 
     </div>
   </div>
@@ -41,16 +44,16 @@
   {{{body}}}
 
   <p class="info">{{info}}</p>
-  <p class="info"></p>
+  {{!-- <p class="info"></p>
   <p class="info"><span class="yes">okay to eat</span></p>
   <p class="info"><span class="no">do not eat</span></p>
-  <p class="info"><span class="caution">be careful</span></p>
+  <p class="info"><span class="caution">be careful</span></p> --}}
   <div class="separator"></div>
-
+ {{!-- <footer><p id="footer">The information provided on this website is made available for educational purposes only. It should in no way be substituted for the correct veterinary assessment of each individual patient by a suitably qualified Veterinary Surgeon or Veterinarian.</p></footer> --}}
 </body>
 <script>
   function process() {
-    var url = "http://localhost:8888/" + document.getElementById("url").value.toLowerCase();
+    var url = "http://localhost:8888/food/" + document.getElementById("url").value.toLowerCase();
     location.href = url;
     return false;
   }

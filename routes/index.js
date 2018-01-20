@@ -24,7 +24,7 @@ router.get('/food', (req, res) => {
   });
 });
 
-router.get('/:food_name', (req, res) => {
+router.get('/food/:food_name', (req, res) => {
   const food_name = req.params.food_name;
   knex('food_table').then((rows) => {
     function search(nameKey, rowsArray){
