@@ -4,6 +4,8 @@
 <head>
   <title>{{homeTitle}}</title>
   <link id="stylesheet" rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body id="body">
@@ -43,15 +45,20 @@
 
   {{{body}}}
 
-  <p class="info">{{info}}</p>
+  {{!-- <p class="info">{{info}}</p> --}}
   {{!-- <p class="info"></p>
   <p class="info"><span class="yes">okay to eat</span></p>
   <p class="info"><span class="no">do not eat</span></p>
   <p class="info"><span class="caution">be careful</span></p> --}}
   <div class="separator"></div>
  {{!-- <footer><p id="footer">The information provided on this website is made available for educational purposes only. It should in no way be substituted for the correct veterinary assessment of each individual patient by a suitably qualified Veterinary Surgeon or Veterinarian.</p></footer> --}}
+
+
+
 </body>
+
 <script>
+
   function process() {
     var url = "http://localhost:8888/food/" + document.getElementById("url").value.toLowerCase();
     location.href = url;
@@ -78,6 +85,27 @@
     stylesheet.href = 'http://localhost:8888/stylesheets/styleNo.css'
   }
 
+
+  $(function() {
+    var availableTags = [
+      'potato',
+      'avocado',
+      'popcorn',
+      'macadamia nuts',
+      'xylitol',
+      'apples',
+      'bananas',
+      'blueberries',
+      'cherries',
+      'grapes',
+      'raisins',
+      'mushrooms',
+      'tomatoes'
+    ];
+    $( "#url" ).autocomplete({
+      source: availableTags
+    });
+  });
 
 </script>
 
