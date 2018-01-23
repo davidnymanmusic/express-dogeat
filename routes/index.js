@@ -40,6 +40,7 @@ router.get('/food/:food_name', (req, res) => {
         title: (search(food_name, rows).edible + "!").toUpperCase(),
         name: search(food_name, rows).food_name,
         description: search(food_name, rows).description,
+        homeTitle: ('DOG EAT ' + search(food_name, rows).food_name + "?").toUpperCase()
         }),
       'default': () => res.sendStatus(406)
 

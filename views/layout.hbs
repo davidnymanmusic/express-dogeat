@@ -3,14 +3,22 @@
 
 <head>
   <title>{{homeTitle}}</title>
-  <link id="stylesheet" rel='stylesheet' href='/stylesheets/style.css' />
+
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/manifest.json">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+    <link id="stylesheet" rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body id="body">
   <div class="topnav">
     <a href="/">Home</a>
+    <a href="/about">About</a>
     <a href="/yes">Yes</a>
     <a href="/no">No</a>
     <a href="/caution">Caution</a>
@@ -24,13 +32,13 @@
       <div class="input">
         <p id="my">can my dog eat</p>
         <form onSubmit="return process();">
-          <span id="food"> <input type="text" name="url" id="url"> <p id="question">?</p></span>
+          <span id="food"> <input type="text" name="url" id="url" title="start typing!"> <p id="question">?</p></span>
         </form>
       </div>
       <div class="separator"></div>
       <div class="dog">
         <span id="wrapper">
-          <img src="https://i.imgur.com/vyjHXAT.png" title="Ask Arthur, he knows!" height="220px" width="220px" />
+          <a href="http://www.susannelamb.com/"><img src="https://i.imgur.com/vyjHXAT.png" title="Ask Arthur, he knows!" height="220px" width="220px" /></a>
         </span>
         <span class="bubble">
           <span id="bubbleText" class="oval-speech-no">
@@ -43,22 +51,26 @@
     </div>
   </div>
 
-  {{{body}}}
-
   {{!-- <p class="info">{{info}}</p> --}}
   {{!-- <p class="info"></p>
   <p class="info"><span class="yes">okay to eat</span></p>
   <p class="info"><span class="no">do not eat</span></p>
   <p class="info"><span class="caution">be careful</span></p> --}}
   <div class="separator"></div>
- {{!-- <footer><p id="footer">The information provided on this website is made available for educational purposes only. It should in no way be substituted for the correct veterinary assessment of each individual patient by a suitably qualified Veterinary Surgeon or Veterinarian.</p></footer> --}}
 
+  {{!-- <p>Find a vet near you!</p>
+    <iframe src="https://maps.google.com/maps?q=veterinarian&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" marginheight="0" marginwidth="0">
+</iframe> --}}
+  </div>
 
+  </div>
+  {{{body}}}
+
+  <footer><p id="footer">The information provided on this website is made available for educational purposes only. It should in no way be substituted for the correct veterinary assessment of each individual patient by a suitably qualified Veterinary Surgeon or Veterinarian.</p></footer>
 
 </body>
 
 <script>
-
   function process() {
     var url = "http://localhost:8888/food/" + document.getElementById("url").value.toLowerCase();
     location.href = url;
@@ -102,11 +114,28 @@
       'mushrooms',
       'tomatoes'
     ];
-    $( "#url" ).autocomplete({
+    $("#url").autocomplete({
       source: availableTags
     });
   });
 
+
+  var index = 0;
+
+  function rotate() {
+    [].forEach.call(document.images, function(v, i) {
+      document.images[i].hidden = i !== index
+    });
+    index = (index + 1) % document.images.length;
+  }
+
+  window.onload = function() {
+    var spin = setInterval(rotate, 64);
+    setTimeout(function() {
+      clearInterval(spin);
+
+    }, 1080)
+  };
 </script>
 
 </html>

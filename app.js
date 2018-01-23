@@ -12,6 +12,7 @@ const no = require('./routes/no');
 const yes = require('./routes/yes');
 const caution = require('./routes/caution');
 const contact = require('./routes/contact');
+const about = require('./routes/about');
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use('/contact', contact);
 app.use('/no', no);
 app.use('/yes', yes);
 app.use('/caution', caution);
+app.use('/about', about);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
