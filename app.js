@@ -59,6 +59,4 @@ app.use(function(err, req, res, next) {
     email: 'davenyman@gmail.com'});
 });
 
-console.log("http://localhost:8888/");
-
 module.exports = app;
