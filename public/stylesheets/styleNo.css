@@ -47,18 +47,18 @@ input {
   height: 40px;
   font-size: 40px;
   border: 0px;
-  width: 350px;
+  width: 370px;
   color: rgb(65, 65, 65);
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 1px solid black;
-  text-align: center;
+  text-align: left;
   margin: 0;
 }
 
 input[type="text"] {
-  width: 330px;
+  width: 380px;
   font-size: 36px;
 }
 
@@ -82,6 +82,7 @@ input[type="text"]::selection {
 #my {
   text-align: center;
   width: 100%;
+  font-size: 50px;
 }
 
 .bubble {
@@ -113,7 +114,7 @@ input[type="text"]::selection {
   float: left;
   color: rgb(108, 108, 108);
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 80px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -226,7 +227,7 @@ footer {
   color: rgb(91, 91, 91);
 }
 
-.oval-speech-no {
+.oval-speech {
   padding-top: 50px;
   position: relative;
   width: 80vw;
@@ -242,7 +243,7 @@ footer {
   font-size: 48px;
 }
 
-.oval-speech-no p {
+.oval-speech p {
   font-size: 1.25em;
   font-family: 'Futura-Bold', arial;
   font-size: 24px;
@@ -250,7 +251,7 @@ footer {
 
 /* creates part of the curve */
 
-.oval-speech-no:before {
+.oval-speech:before {
   padding-top: 5%;
   content: "";
   position: absolute;
@@ -272,7 +273,7 @@ footer {
 
 /* creates part of the curved pointy bit */
 
-.oval-speech-no:after {
+.oval-speech:after {
   padding-top: 5%;
   content: "";
   position: absolute;
@@ -317,12 +318,74 @@ li:hover {
   font-size: 8px;
 }
 
-@media screen and (max-width: 888px) {
-  .oval-speech-no {
-    padding: 46px 56px;
-    font-size: 20px;
+@media screen and (max-width: 980px) {
+  .oval-speech {
+    padding: 50px 50px;
+    font-size: 28px;
+    border-radius: 196px / 174px;
   }
-  .oval-speech-no:before {
+  .oval-speech:before {
     right: 60%;
+  }
+  input {
+    height: 75px;
+    font-size: 70px;
+    width: 90%;
+  }
+  input[type="text"] {
+    width: 88%;
+    font-size: 66px;
+  }
+  .ui-autocomplete {
+    font-size: 70px;
+  }
+  img {
+    width: 300px;
+    height: 300px;
+  }
+  #my {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 788px) {
+  .oval-speech {
+    padding: 29px 39px;
+    font-size: 20px;
+    border-radius: 186px / 154px;
+  }
+  .oval-speech:before {
+    right: 60%;
+  }
+  .oval-speech p {
+    font-size: 16px;
+  }
+  img {
+    width: 140px;
+    height: 140px;
+  }
+  .whole {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  input {
+    height: 40px;
+    font-size: 40px;
+    width: 80%;
+  }
+  input[type="text"] {
+    width: 60%;
+    font-size: 40px;
+  }
+  .ui-autocomplete {
+    font-size: 40px;
+  }
+  img {
+    width: 300px;
+    height: 300px;
+  }
+  #my {
+    font-size: 40px;
   }
 }

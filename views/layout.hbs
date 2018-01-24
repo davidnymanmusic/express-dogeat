@@ -12,16 +12,15 @@
   <link rel="manifest" href="favicons/manifest.json">
   <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="theme-color" content="#ffffff">
-    <link id="stylesheet" rel='stylesheet' href='/stylesheets/style.css' />
+  <link id="stylesheet" rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body id="body">
   <div class="topnav">
     <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/yes">Yes</a>
+    <a href="/about">About</a>{{!-- <a href="/yes">Yes</a>
     <a href="/no">No</a>
-    <a href="/caution">Caution</a>
+    <a href="/caution">Caution</a> --}}
   </div>
 
   </div>
@@ -32,6 +31,7 @@
       <div class="input">
         <p id="my">can my dog eat</p>
         <form onSubmit="return process();">
+
           <span id="food"> <input type="text" name="url" id="url" title="start typing!"> <p id="question">?</p></span>
         </form>
       </div>
@@ -41,7 +41,7 @@
           <a href="http://www.susannelamb.com/"><img src="https://i.imgur.com/vyjHXAT.png" title="Ask Arthur, he knows!" height="220px" width="220px" /></a>
         </span>
         <span class="bubble">
-          <span id="bubbleText" class="oval-speech-no">
+          <span id="bubbleText" class="oval-speech">
             {{title}}
           </span>
         </span>
@@ -51,11 +51,6 @@
     </div>
   </div>
 
-  {{!-- <p class="info">{{info}}</p> --}}
-  {{!-- <p class="info"></p>
-  <p class="info"><span class="yes">okay to eat</span></p>
-  <p class="info"><span class="no">do not eat</span></p>
-  <p class="info"><span class="caution">be careful</span></p> --}}
   <div class="separator"></div>
 
   {{!-- <p>Find a vet near you!</p>
@@ -64,17 +59,22 @@
   </div>
 
   </div>
+
+
   {{{body}}}
 
-  <footer><p id="footer">The information provided on this website is made available for educational purposes only. It should in no way be substituted for the correct veterinary assessment of each individual patient by a suitably qualified Veterinary Surgeon or Veterinarian.</p></footer>
+  <footer>
+    <p id="footer">The information provided on this website is made available for educational purposes only. It should in no way be substituted for the correct veterinary assessment of each individual patient by a suitably qualified Veterinary Surgeon or Veterinarian.</p>
+  </footer>
 
 </body>
 
 <script>
   function process() {
-    var url = "http://localhost:8888/food/" + document.getElementById("url").value.toLowerCase();
+    var url = "/food/" + document.getElementById("url").value.toLowerCase();
     location.href = url;
     return false;
+    console.log(url);
   }
   const bubbleText = document.querySelector('#bubbleText');
   const stylesheet = document.querySelector('#stylesheet');
@@ -86,22 +86,22 @@
 
   if (bubbleText.innerText == "CAUTION!") {
     console.log('it worked');
-    stylesheet.href = 'http://localhost:8888/stylesheets/styleCaution.css'
+    stylesheet.href = '/stylesheets/styleCaution.css'
   }
   if (bubbleText.innerText == "YES!") {
     console.log('it worked');
-    stylesheet.href = 'http://localhost:8888/stylesheets/style.css'
+    stylesheet.href = '/stylesheets/style.css'
   }
   if (bubbleText.innerText == "NO!") {
     console.log('it worked');
-    stylesheet.href = 'http://localhost:8888/stylesheets/styleNo.css'
+    stylesheet.href = '/stylesheets/styleNo.css'
   }
 
 
   $(function() {
-    var availableTags = [
-      'potato',
-      'avocado',
+    var foods = [
+      'potatoes',
+      'avocados',
       'popcorn',
       'macadamia nuts',
       'xylitol',
@@ -112,10 +112,36 @@
       'grapes',
       'raisins',
       'mushrooms',
-      'tomatoes'
+      'tomatoes',
+      'corn',
+      'ham',
+      'ice cream',
+      'peanut butter',
+      'almonds',
+      'bread',
+      'cashews',
+      'chocolate',
+      'cinnamon',
+      'eggs',
+      'quinoa',
+      'cheese',
+      'pork',
+      'coconut',
+      'fish',
+      'garlic',
+      'carrots',
+      'asparagus',
+      'watermelon',
+      'sweet potatoes',
+      'pumpkin',
+      'spinach',
+      'canteloupe',
+      'brussel sprouts',
+      'chicken',
+      'oatmeal',
     ];
     $("#url").autocomplete({
-      source: availableTags
+      source: foods
     });
   });
 

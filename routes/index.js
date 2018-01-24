@@ -15,10 +15,9 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/food', (req, res) => {
-  knex('food_table').then((rows) => {
+  knex('foods').then((rows) => {
     res.format({
       'application/json': () => res.json(rows),
-      // 'text/html': () => res.render('birds/index', { birds: rows }),
       'default': () => res.sendStatus(406)
     });
   });
@@ -26,7 +25,7 @@ router.get('/food', (req, res) => {
 
 router.get('/food/:food_name', (req, res) => {
   const food_name = req.params.food_name;
-  knex('food_table').then((rows) => {
+  knex('foods').then((rows) => {
     function search(nameKey, rowsArray){
     for (var i=0; i < rowsArray.length; i++) {
         if (rowsArray[i].food_name === nameKey) {
