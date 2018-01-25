@@ -350,6 +350,16 @@ li:hover {
   #my {
     font-size: 80px;
   }
+  #question {
+    font-size: 70px;
+  }
+  .description {
+    text-align: left;
+    font-size: 1.7em;
+    margin: 0 auto;
+    width: 80%;
+    padding-bottom: 15%;
+}
 }
 
 @media screen and (max-width: 788px) {
