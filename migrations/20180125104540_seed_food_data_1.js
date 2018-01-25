@@ -1,5 +1,5 @@
-module.exports = {
-  seed(knex) {
+exports.up = function(knex, Promise) {
+  return knex('foods').delete().then(() => {
     return knex('foods').insert([
       {
         "food_name": "potatoes",
@@ -158,6 +158,10 @@ module.exports = {
         "edible": "yes",
         "description": "Oatmeal is found in many dog foods and for those not sensitive to grains, it can be a healthy additive to your dog’s meal. Not only is it packed with vitamins and minerals, it’s an excellent source of dietary fiber."
       }
-    ])
-  }
-}
+    ]);
+  });
+};
+
+exports.down = function(knex, Promise) {
+  return knex('foods').delete();
+};
