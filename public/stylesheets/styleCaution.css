@@ -324,9 +324,9 @@ li:hover {
 
 @media screen and (max-width: 980px) {
   .oval-speech {
-    padding: 50px 50px;
-    font-size: 28px;
-    border-radius: 196px / 174px;
+    padding: 40px 21px;
+    font-size: 20px;
+    border-radius: 196px / 160px;
   }
   .oval-speech:before {
     right: 60%;
@@ -351,7 +351,7 @@ li:hover {
     font-size: 80px;
   }
   #question {
-    font-size: 70px;
+    font-size: 65px;
   }
   .description {
     text-align: left;
